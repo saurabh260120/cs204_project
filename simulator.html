@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="EMF Generation">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <title>SIMULATOR</title>
+  <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+  </head>
+<body outline:black;>
+  </br>
+
+<header>
+    <a href="#" class="group">CS203 - GROUP 14</a>
+
+    <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="projectinformation.html">Project information</a>
+    <a href="theory.html">Theory</a>
+    <a href="simulation.html">Simulation</a>
+    <a href="conclusion.html">Reference</a>
+    </nav>
+</header>
+<section class="simulator">
+<div class="heading">
+  <h1>SA1 Fault in Full Subtracter SIMULATOR</h1>
+</div>
+<div id="wrapper" style="position:absolute; border: 2px solid #ed176f; top:200px;width:1200px;height:1100px;left:20px">
+
+
+    <div  class="powerSwitch" style="position:absolute;left:25px;top:50px;" >
+        <table width="0%" >
+         <tr>
+          <td>
+            <h3 style="color:blue;font-size: 11px;text-align: center;">POWER SWITCH</h3>
+              <img id="power" onclick="changeImage3()" src="simulator-image/switchoff.png" width="70" height="40">
+          </td>
+          </tr>
+          </table>
+    </div>
+
+   <div class="inputA" style="position:absolute;left:25px;top:150px;" >
+    <table width="0%" >
+     <tr>
+      <td>
+        <h3 style="color:blue;font-size: 11px;text-align: center;">Input A</h3>
+          <img id="A" onclick="changeImage()" src="simulator-image/switchoff.png" width="70" height="40">
+        </td>
+      </tr>
+      </table>
+   </div>
+
+   <!-- DROP DOWN FOR FAULTY INPUT STARTS HERE -->
+   <div class="DropDown" style="position:absolute;left:209px;top:283px;" >
+    <table width="0%" >
+     <tr>
+      <td>
+       <form >
+        <label class="faul" for="faulty">Choose a Faulty Position:</label>
+        <select id="faulty" name="faulty" onchange="faultyALgorithm()">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+       </form>
+         
+        </td>
+      </tr>
+      </table>
+   </div>
+   <!-- DROP DOWN FOR FAULTY INPUT ENDS HERE -->
+
+   <div class="inputB" style="position:absolute;left:25px;top:250px;" >
+    <table width="0%" >
+     <tr>
+      <td>
+        <h3 style="color:blue;font-size: 11px;text-align: center;">Input B</h3>
+
+        <img id="B" onclick="changeImage1()" src="simulator-image/switchoff.png" width="70" height="40">
+        </td>
+      </tr>
+      </table>
+
+   </div>
+     
+       
+<div class="bin" style="position:absolute;left:25px;top:350px;" >
+    <table width="0%" >
+     <tr>
+      <td>
+        <h3 style="color:blue;font-size: 11px;text-align: center">Bin</h3>
+          <img id="C" onclick="changeImage2()" src="simulator-image/switchoff.png" width="70" height="40">
+        </td>
+        </tr>
+    </div>
+      
+     </table>
+</div>
+
+<!-- image -->
+<div style="position:absolute;left:210px;top:10px;">
+  <table width="0%"  > 
+  <tr>
+    <td>
+     <img src="simulator-image/full-subtractor_.jpg" width="500" height="216" >
+    </td>
+  </tr>
+  </table>
+  </div>
+<!-- image end -->
+
+<!-- BULB SECTION FAULTY STARTS HERE -->
+<div style="position:absolute;left:1000px;top:10px;">
+  <table width="0%"  > 
+  <tr>
+    <td>
+      <h3 style="position:absolute:center"><b>Faulty Output</b></h3>
+     </td>
+  </tr>
+  </table>
+  </div>
+
+<div style="position:absolute;left:1000px;top:70px;">
+<table width="0%"> 
+<tr>
+  <td>
+    <img id="Lfaulty" src="simulator-image/off.png"  width="100" height="120">
+  </td>
+</tr>
+</table>
+</div>
+
+
+<div style="position:absolute;left:800px;top:85px;">
+<table width="0%"> 
+<tr>
+  <td>
+    <p style="position:absolute:center"><b>Difference</b></p>
+    <p style="position:absolute:center"><b>LED1</b></p>
+   
+  </td>
+</tr>
+</table>
+</div>
+
+
+<div style="position:absolute;left:1000px;top:150px;">
+<table width="0%" > 
+<tr>
+  <td>
+   <img  id="Mfaulty" src="simulator-image/off.png"  width="100" height="120">
+  </td>
+</tr>
+</table>
+</div>
+<div style="position:absolute;left:800px;top:165px;"> 
+<table width="0%" > 
+  <tr>
+  <td>
+    <p style="position: absolute:center"><b>Bout</b></p>
+    <p style="position: absolute:center"><b>LED2</b></p>
+   </td>
+</tr>
+</table>
+</div>
+<!-- BULB SECTION FAULTY END HERE -->
+
+
+<!-- BULB SECTION EXPECTED STARTS HERE -->
+
+<div style="position:absolute;left:800px;top:10px;">
+  <table width="0%" > 
+  <tr>
+    <td>
+      <h3 style="position:absolute:center"><b>Expected Output</b></h3>
+     </td>
+  </tr>
+  </table>
+  </div>
+
+<div style="position:absolute;left:860px;top:70px;">
+<table width="0%" > 
+<tr>
+  <td>
+    <img id="L" src="simulator-image/off.png"  width="100" height="120">
+  </td>
+</tr>
+</table>
+</div>
+
+
+<div style="position:absolute;left:860px;top:150px;">
+<table width="0%"> 
+<tr>
+  <td>
+   <img  id="M" src="simulator-image/off.png"  width="100" height="120">
+  </td>
+</tr>
+</table>
+</div>
+
+
+   <div id="tblwrap" style="position:absolute; border: 2px solid #ed176f; top:500px;width:600px;height:300px;left:145px">
+                <div style="position:absolute;font-size:16px;background-color:#f098bd;top:0px;left:0px; width:600px;height:50px;font-weight: bold;"><p style="color:white"> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRUTH TABLE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style=" background: #0000ff !important;color: white; height:30px; width:85px;" id = "button" type = "button" value = "PRINT" onclick="print()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style=" background: #0000ff !important;height:30px; color: white; width:85px;" id = "button" type = "button"  value = "Add" onclick="add()"></p>
+                </div>
+                <div id="table" style="background-color: #ECEFF4;; position:absolute; top:50px;width:600px;height:250px;left:0px; overflow-y: auto;">
+                    <table id="mytable" width="600" border="1" style="text-align:center" >
+                        <tr>
+                            <th width="25">Serial No.</th>
+                            <th width="25">INPUT A</th>
+                            <th width="25">INPUT B</th>
+                            <th width="25">_Bin_</th>
+                            <th width="25">Expected Difference</th>
+                            <th width="25">Expected Bout</th>
+                            <th width="25">Faulty location</th>
+                            <th width="25">Faulty Difference</th>
+                            <th width="25">Faulty Bout</th>
+                            
+                          </tr>
+                      </table>
+                    </form>
+                </div>
+    </div>
+ 
+       </tr>
+     </table>
+
+</section>
+<script>
+
+
+
+function changeImage(){
+    var image1 = document.getElementById("A");
+    var image2 = document.getElementById("power");
+    if (image2.src.match("switchon"))
+    {
+    if (image1.src.match("switchoff"))
+      {
+        image1.src = "simulator-image/switchon.png";
+        Glow();
+        faultyALgorithm();
+        }
+    else
+      {
+        image1.src = "simulator-image/switchoff.png";
+        Glow();
+        faultyALgorithm();
+      }
+    }
+
+ 
+  if (image2.src.match("switchoff"))
+  {
+
+  alert( 'On the Power switch' );
+ }
+}
+
+ function changeImage1(){
+    var image1 = document.getElementById("B");
+    var image2 = document.getElementById("power");
+    if (image2.src.match("switchon"))
+    {
+    if (image1.src.match("switchoff"))
+      {
+        image1.src = "simulator-image/switchon.png";
+        Glow();
+        faultyALgorithm();
+       
+        
+        
+      }
+    else
+      {
+        image1.src = "simulator-image/switchoff.png";
+        Glow();
+        faultyALgorithm();
+        
+   }
+ }
+ if (image2.src.match("switchoff"))
+  {
+
+  alert( 'On the Power switch' );
+ }
+
+ }
+ function changeImage2() 
+{
+    var image1 = document.getElementById("C");
+    var image2 = document.getElementById("power");
+    if (image2.src.match("switchon"))
+    {
+    if (image1.src.match("switchoff"))
+      {
+        image1.src = "simulator-image/switchon.png";
+        Glow();
+        faultyALgorithm();
+        
+        
+        
+      }
+    else
+      {
+        image1.src = "simulator-image/switchoff.png";
+        Glow();
+        faultyALgorithm();
+
+   }
+
+ }
+ if (image2.src.match("switchoff"))
+  {
+
+  alert( 'On the Power switch' );
+ }
+
+ }
+ function changeImage3() 
+{
+    var image1 = document.getElementById("power");
+    if (image1.src.match("switchoff"))
+      {
+        image1.src = "simulator-image/switchon.png";
+        }
+    else
+      {
+        image1.src = "simulator-image/switchoff.png";
+          document.getElementById("L").src="simulator-image/off.png";
+        document.getElementById("M").src="simulator-image/off.png";
+        
+   }
+ }
+ var n=1;
+ function add()
+{
+  var image3=document.getElementById("power");
+
+
+  if(image3.src.match("switchoff"))
+      {
+        alert("On Power Supply");
+      }
+      else
+      {
+        let aInputElement = document.getElementById("A");
+  let bInputElement = document.getElementById("B");
+  let binElement = document.getElementById("C");
+  let aInput = returnTrueFalse(aInputElement);
+  let bInput = returnTrueFalse(bInputElement);
+  let binInput = returnTrueFalse(binElement);
+
+  let faultyInput = document.getElementById("faulty").value;
+
+
+  //intialisation
+  let wire1,aInputNot,wire1Not,wire2,wire3,difference, bOut;
+
+  //faulty functionality
+  if(faultyInput == 1 ){
+    aInput = true;
+  }
+  if(faultyInput == 2 ){
+    bInput = true;
+  }
+  if(faultyInput == 3 ){
+    binInput = true;
+  }
+
+
+  wire1 = aInput ^ bInput; 
+  if(faultyInput == 4 ){
+    wire1 = true;
+  }
+  aInputNot = !aInput;
+  if(faultyInput == 5 ){
+    aInputNot = true;
+  }
+  wire1Not = !wire1;
+  if(faultyInput == 6 ){
+    wire1Not = true;
+  }
+  wire2 = wire1Not && binInput;
+  if(faultyInput == 8 ){
+    wire2 = true;
+  }
+  wire3 = aInputNot && binInput;
+  if(faultyInput == 7 ){
+    wire3 = true;
+  }
+  difference = wire1 ^ binInput;
+  bOut = wire2 || wire3;
+
+  //faulty functionality
+  if(faultyInput == 9 ){
+    difference = true;
+  }
+  if(faultyInput == 10 ){
+    bOut = true;
+  }
+    var e = document.getElementById("A");
+    var f = document.getElementById("B");
+    var g = document.getElementById("C");
+  
+   if(e.src.match("switchoff") && f.src.match("switchoff") && g.src.match("switchoff") )
+    {
+      a=b=c=d=p=0;
+    }
+     if(e.src.match("switchoff") && f.src.match("switchoff") && g.src.match("switchon") )
+    {
+      a=b=0;c=d=p=1;
+     
+    }
+      if(e.src.match("switchoff") && f.src.match("switchon") && g.src.match("switchoff") )
+    {
+      b=d=p=1;
+      a=c=0;
+    }
+      if(e.src.match("switchoff") && f.src.match("switchon") && g.src.match("switchon") )
+    {
+      a=d=0;
+      b=c=p=1;
+    }
+       if(e.src.match("switchon") && f.src.match("switchoff") && g.src.match("switchoff") )
+    {
+      a=d=1;
+      b=c=p=0;
+    }
+     if(e.src.match("switchon") && f.src.match("switchoff") && g.src.match("switchon") )
+    {
+      a=c=1;
+      b=d=p=0;
+    }
+     if(e.src.match("switchon") && f.src.match("switchon") && g.src.match("switchoff") )
+    {
+      a=b=1;
+      c=d=p=0;
+    }
+      if(e.src.match("switchon") && f.src.match("switchon") && g.src.match("switchon") )
+    {
+      a=b=c=d=p=1;
+    }
+     
+      
+      var table = document.getElementById("mytable");
+      // Create an empty <tr> element and add it to the 1st position of the table:
+      var row = table.insertRow(-1);
+      // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      var cell6 = row.insertCell(5);
+      var cell7 = row.insertCell(6);
+      var cell8 = row.insertCell(7);
+      var cell9= row.insertCell(8);
+      
+      cell1.innerHTML = n++;
+      cell2.innerHTML = a;
+      cell3.innerHTML = b;
+      cell4.innerHTML = c;
+      cell5.innerHTML = d;
+      cell6.innerHTML = p;
+      cell7.innerHTML = faultyInput;
+      // difference
+      if(difference == true){
+        cell8.innerHTML = 1;
+      }else if (difference == false){
+        cell8.innerHTML = 0;
+      }else{
+        cell8.innerHTML = difference;
+      }
+
+      // B-out
+      if(bOut == true){
+        cell9.innerHTML = 1;
+      }else if (bOut == false){
+        cell9.innerHTML = 0;
+      }else{
+        cell9.innerHTML = bOut;
+      }
+      
+                    
+}
+}
+function Glow()
+{
+    var e = document.getElementById("A");
+    var f = document.getElementById("B");
+    var g = document.getElementById("C");
+   
+  
+   if(e.src.match("switchoff") && f.src.match("switchoff") && g.src.match("simulator-image/switchoff.png") )
+    {
+      document.getElementById("L").src="simulator-image/off.png";
+      document.getElementById("M").src="simulator-image/off.png"; 
+    }
+      
+   if(e.src.match("switchoff") && f.src.match("switchoff") && g.src.match("switchon") )
+    {
+      document.getElementById("L").src="simulator-image/on.png";
+      document.getElementById("M").src="simulator-image/on.png"; 
+     
+    }
+      if(e.src.match("switchoff") && f.src.match("switchon") && g.src.match("switchoff") )
+    {
+     document.getElementById("L").src="simulator-image/on.png";
+      document.getElementById("M").src="simulator-image/on.png"; 
+    }
+      if(e.src.match("switchoff") && f.src.match("switchon") && g.src.match("switchon") )
+    {
+     document.getElementById("L").src="simulator-image/off.png";
+      document.getElementById("M").src="simulator-image/on.png"; 
+    }
+       if(e.src.match("switchon") && f.src.match("switchoff") && g.src.match("switchoff") )
+    {
+      document.getElementById("L").src="simulator-image/on.png";
+      document.getElementById("M").src="simulator-image/off.png"; 
+    }
+     if(e.src.match("switchon") && f.src.match("switchoff") && g.src.match("switchon") )
+    {
+      document.getElementById("L").src="simulator-image/off.png";
+      document.getElementById("M").src="simulator-image/off.png"; 
+    }
+     if(e.src.match("switchon") && f.src.match("switchon") && g.src.match("switchoff") )
+    {
+       document.getElementById("L").src="simulator-image/off.png";
+      document.getElementById("M").src="simulator-image/off.png"; 
+    }
+      if(e.src.match("switchon") && f.src.match("switchon") && g.src.match("switchon") )
+    {
+       document.getElementById("L").src="simulator-image/on.png";
+      document.getElementById("M").src="simulator-image/on.png"; 
+    }
+}
+
+function faultyALgorithm(){
+  let image2 = document.getElementById("power");
+  if (image2.src.match("switchoff")){
+    alert( 'On the Power switch' );
+    return;
+  }
+
+
+  let aInputElement = document.getElementById("A");
+  let bInputElement = document.getElementById("B");
+  let binElement = document.getElementById("C");
+  let aInput = returnTrueFalse(aInputElement);
+  let bInput = returnTrueFalse(bInputElement);
+  let binInput = returnTrueFalse(binElement);
+
+  let faultyInput = document.getElementById("faulty").value;
+
+
+  //intialisation
+  let wire1,aInputNot,wire1Not,wire2,wire3,difference, bOut;
+
+  //faulty functionality
+  if(faultyInput == 1 ){
+    aInput = true;
+  }
+  if(faultyInput == 2 ){
+    bInput = true;
+  }
+  if(faultyInput == 3 ){
+    binInput = true;
+  }
+
+
+  wire1 = aInput ^ bInput; 
+  if(faultyInput == 4 ){
+    wire1 = true;
+  }
+  aInputNot = !aInput;
+  if(faultyInput == 5 ){
+    aInputNot = true;
+  }
+  wire1Not = !wire1;
+  if(faultyInput == 6 ){
+    wire1Not = true;
+  }
+  wire2 = wire1Not && binInput;
+  if(faultyInput == 8 ){
+    wire2 = true;
+  }
+  wire3 = aInputNot && binInput;
+  if(faultyInput == 7 ){
+    wire3 = true;
+  }
+  difference = wire1 ^ binInput;
+  bOut = wire2 || wire3;
+
+  //faulty functionality
+  if(faultyInput == 9 ){
+    difference = true;
+  }
+  if(faultyInput == 10 ){
+    bOut = true;
+  }
+ 
+
+  // switching bulb on or off
+  if(difference == false || difference == 0){
+    let lFaulty =  document.getElementById("Lfaulty");
+    lFaulty.src = "simulator-image/off.png";
+  }else{
+    let lFaulty =  document.getElementById("Lfaulty");
+    lFaulty.src = "simulator-image/on.png";
+  }
+  if(bOut == false || bOut == 0){
+    let mFaulty =  document.getElementById("Mfaulty");
+    mFaulty.src = "simulator-image/off.png";
+  }else{
+    let mFaulty =  document.getElementById("Mfaulty");
+    mFaulty.src = "simulator-image/on.png";
+  }
+
+}
+function returnTrueFalse(elem){
+  if(elem.src.match("switchon")){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+
+</script>
+</div>
+</div>
+</form>
+</body>
+</html>
