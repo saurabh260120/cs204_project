@@ -1,0 +1,64 @@
+
+*{
+    font-family: 'Nunito', sans-serif;
+  
+   text-decoration: none;
+}
+
+header{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
+    padding: 1.5rem 10%;
+    align-items:center ;
+    justify-content:space-between;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+header .group{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:  #ED176F;
+}
+header .navbar a{
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    color: #ED176F;
+}
+header .navbar a:hover{
+    background-color: #0000FF;
+    color: white;
+    border-radius: 2rem;
+    padding: .2rem 1rem;
+}
+.simulator{
+      padding-top: 5rem;
+    }
+
+.heading h1{
+  text-align:center;
+  color:#0000FF;
+  font-size: 1.5rem;
+  }
+  .faul{
+    color:#ed176f;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  body 
+  {
+    background-color: #ECEFF4;
+  }
+
+  h3
+  {
+    color: #0000ff;
+  } 
+  #wrapper
+  {
+    width:100%;
+  }
